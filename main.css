@@ -1,0 +1,23 @@
+/* styles.css */
+
+/* Ensure background covers the entire area */
+.bg-cover {
+    background-size: cover;
+  }
+  
+  /* Custom loading spinner */
+  .loading-spinner {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 0.10s linear infinite;
+  }
+  
+  /* Loading animation */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

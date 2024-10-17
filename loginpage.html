@@ -6,20 +6,19 @@
   <title>ISAK HOTSPOT</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <style>
-    .bg-cover {
-      background-size: cover;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <!-- <link rel="stylesheet" href="main.css"> -->
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-gray-100 flex flex-col">
   <div class="flex-grow bg-no-repeat bg-cover bg-center py-8 px-4 sm:px-6 lg:px-8" style="background-image: url('./bg/2.png');">
     <div class="max-w-md w-full mx-auto space-y-8">
+      <!-- <div id="loginCard" class="bg-white p-6 sm:p-8 rounded-3xl shadow-lg"></div> -->
       <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-lg">
         <h2 class="text-3xl sm:text-4xl font-bold text-center text-blue-700 mb-6">
           ISAK HOTSPOT
         </h2>
-        <p class="text-sm sm:text-base text-gray-600 mb-6 text-center">
+        <p class="text-sm sm:text-base text-gray-600 mb-6 text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore esse soluta, animi quos doloribus minima quidem voluptatum nesciunt inventore at expedita voluptate officia cumque, vel ea quis pariatur, illo veniam.
         </p>
         <p class="text-center text-sm sm:text-base mb-4">
@@ -35,21 +34,21 @@
         </div>
         <form class="space-y-4" id="voucherForm">
           <div class="flex flex-col sm:flex-row gap-2">
-            <input type="text" placeholder="Masukkan voucher" class="flex-grow px-3 py-2 border border-gray-300 rounded-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="text" placeholder="Masukkan voucher" class="flex-grow px-3 py-2 border border-gray-700 rounded-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
             <button id="voucherSubmitBtn" type="submit" class="w-full sm:w-auto px-4 py-2 bg-blue-500 text-white rounded-full text-sm sm:text-base font-semibold hover:bg-blue-600 transition-colors">
               Login
             </button>
           </div>
         </form>
         <form class="space-y-4" id="memberForm" style="display: none;">
-          <input type="text" placeholder="Masukkan username" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <input type="password" placeholder="Masukkan password" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="text" placeholder="Masukkan username" class="w-full px-3 py-2 border border-gray-700 rounded-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="password" placeholder="Masukkan password" class="w-full px-3 py-2 border border-gray-700 rounded-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
           <button id="memberSubmitBtn" type="submit" class="w-full px-4 py-2 bg-blue-500 text-white rounded-full text-sm sm:text-base font-semibold hover:bg-blue-600 transition-colors">
             Login
           </button>
         </form>
         <div class="mt-6 space-y-2">
-          <h3 class="text-center text-lg font-semibold text-blue-900">Harga Paket:</h3>
+          <h3 class="text-center text-lg font-semibold text-blue-900">Harga Paket :</h3>
           <div class="grid grid-cols-2 gap-2 text-center text-sm sm:text-base font-medium text-blue-900">
             <div>2 Jam Rp. 2.000</div>
             <div>3 Jam Rp. 3.000</div>
@@ -58,7 +57,6 @@
           </div>
         </div>
       </div>
-    </div>
   </div>
 
   <script>
@@ -74,39 +72,43 @@
       $('#memberBtn').click(function() {
         $('#memberForm').show();
         $('#voucherForm').hide();
-        $(this).addClass('bg-blue-700').removeClass('bg-blue-500 hover:bg-blue-600');
+        $(this).addClass('bg-blue-700').removeClass('bg-gray-500 hover:bg-blue-600');
         $('#voucherBtn').addClass('bg-blue-500 hover:bg-blue-600').removeClass('bg-blue-700');
       });
 
-      // Handle voucher form submission with loading button
+      // Handle voucher form submission with loading spinner
       $('#voucherForm').submit(function(e) {
         e.preventDefault();
         var $submitBtn = $('#voucherSubmitBtn');
         $submitBtn.prop('disabled', true); // Disable the button
-        $submitBtn.text('Loading...'); // Change the button text to loading
+        $submitBtn.addClass('hover:bg-gray-500')
+        $submitBtn.html('<div class="loading loading-spinner loading-sm">"></div> Loading'); // Add spinner and change text
 
         // Simulate an AJAX request (you can replace this with actual AJAX request)
         setTimeout(function() {
           // Reset the button after the request is complete
           $submitBtn.prop('disabled', false);
-          $submitBtn.text('Login');
+          $submitBtn.html('Login');
           alert('Voucher form submitted!');
         }, 2000); // Simulate 2 seconds of loading time
       });
 
-      // Handle member form submission with loading button
+      // Handle member form submission with loading spinner
       $('#memberForm').submit(function(e) {
         e.preventDefault();
         var $submitBtn = $('#memberSubmitBtn');
         $submitBtn.prop('disabled', true); // Disable the button
-        $submitBtn.text('Loading...'); // Change the button text to loading
+        $submitBtn.html('<div class="loading loading-spinner loading-sm">"></div> Loading'); // Add spinner and change text
+
 
         // Simulate an AJAX request (you can replace this with actual AJAX request)
         setTimeout(function() {
-          // Reset the button after the request is complete
-          $submitBtn.prop('disabled', false);
-          $submitBtn.text('Login');
-          alert('Member form submitted!');
+          $('#loginCard').html(`
+            <div class="text-center">
+              <h2 class="text-3xl sm:text-4xl font-bold text-blue-700 mb-6">Success!</h2>
+              <p class="text-lg sm:text-xl font-semibold text-blue-600">Login successful, please wait...</p>
+            </div>
+          `);
         }, 2000); // Simulate 2 seconds of loading time
       });
     });
