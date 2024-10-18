@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Label Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .floating-label {
+            transition: all 0.3s ease;
+        }
+        .input-container:hover label, .input-container input:focus + label {
+            transform: translateY(-1.5rem);
+            font-size: 0.75rem;
+            color: #6366f1; /* Change label color on hover/focus */
+        }
+        .input-container input:not(:placeholder-shown) + label {
+            transform: translate(-15px, -16px) scale(0.88);
+            z-index: 1111;
+            font-size: 0.75rem;
+            color: #6366f1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <!-- test floating input -->
+    <div class="p-10">
+        <div class="relative inline-block border">
+          <input type="text" class="peer px-6 pb-2 pt-6" id="input" placeholder=" " />
+          <label for="input" class="absolute left-6 top-4 -translate-y-1/4 cursor-text text-xs text-gray-500 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-focus:top-4 peer-focus:text-xs"> Enter name </label>
+        </div>
+      </div>
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
+        <form action="#">
+            <!-- Name Input with Floating Label -->
+            <div class="input-container relative mb-6">
+                <input type="text" id="name" placeholder=" " class="block w-full pl-3 pr-4 py-2 text-gray-900 bg-transparent border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 peer" required />
+                <label for="name" class="absolute left-3 top-2 text-gray-500 floating-label pointer-events-none transition-all duration-200 ease-in-out">Name</label>
+            </div>
+
+            <!-- Email Input with Floating Label -->
+            <div class="input-container relative mb-6">
+                <input type="email" id="email" placeholder=" " class="block w-full pl-3 pr-4 py-2 text-gray-900 bg-transparent border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 peer" required />
+                <label for="email" class="absolute left-3 top-2 text-gray-500 floating-label pointer-events-none transition-all duration-200 ease-in-out">Email</label>
+            </div>
+
+            <!-- Country Input with Floating Label -->
+            <div class="input-container relative mb-6">
+                <select id="country" class="block w-full pl-3 pr-10 py-2 text-gray-900 bg-transparent border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 peer" required>
+                    <option value="" disabled selected hidden></option>
+                    <option value="us">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                </select>
+                <label for="country" class="absolute left-3 top-2 text-gray-500 floating-label pointer-events-none transition-all duration-200 ease-in-out">Country</label>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

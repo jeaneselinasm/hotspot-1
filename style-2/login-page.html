@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISAK HOTSPOT</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <!-- <link rel="stylesheet" href="main.css"> -->
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100 flex flex-col">
+  <div class="flex-grow bg-no-repeat bg-cover bg-center py-8 px-4 sm:px-6 lg:px-8" style="background-image: url('./bg/2.png');">
+    <div class="max-w-md w-full mx-auto space-y-8">
+      <!-- <div id="loginCard" class="bg-white p-6 sm:p-8 rounded-3xl shadow-lg"></div> -->
+      <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-lg">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center text-blue-700 mb-6">
+          ISAK HOTSPOT
+        </h2>
+        <p class="text-sm sm:text-base text-gray-600 mb-6 text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore esse soluta, animi quos doloribus minima quidem voluptatum nesciunt inventore at expedita voluptate officia cumque, vel ea quis pariatur, illo veniam.
+        </p>
+        <p class="text-center text-sm sm:text-base mb-4">
+          Silahkan masukkan kode voucher yang anda miliki
+        </p>
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <button id="voucherBtn" class="py-2 rounded-2xl text-white text-sm sm:text-base font-semibold bg-blue-700">
+            Voucher
+          </button>
+          <button id="memberBtn" class="py-2 rounded-2xl text-white text-sm sm:text-base font-semibold bg-blue-500 hover:bg-blue-600">
+            Member
+          </button>
+        </div>
+        <!-- <form class="space-y-4" id="voucherForm">
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input type="text" placeholder="Masukkan voucher" class="flex-grow px-3 py-2 border border-gray-700 rounded-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="voucherSubmitBtn" type="submit" class="w-full sm:w-auto px-4 py-2 bg-blue-500 text-white rounded-full text-sm sm:text-base font-semibold hover:bg-blue-600 transition-colors">
+              Login
+            </button>
+          </div>
+        </form>
+        <form class="space-y-4" id="memberForm" style="display: none;">
+          <input type="text" placeholder="Masukkan username" class="w-full px-3 py-2 border border-gray-700 rounded-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="password" placeholder="Masukkan password" class="w-full px-3 py-2 border border-gray-700 rounded-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button id="memberSubmitBtn" type="submit" class="w-full px-4 py-2 bg-blue-500 text-white rounded-full text-sm sm:text-base font-semibold hover:bg-blue-600 transition-colors">
+            Login
+          </button>
+        </form> -->
+        <!-- form floating -->
+         
+        div class="selection:bg-rose-500 selection:text-white">
+  <div class="min-h-screen bg-rose-100 flex justify-center items-center">
+    <div class="p-8 flex-1">
+      <div class="w-80 bg-white rounded-3xl mx-auto overflow-hidden shadow-xl">
+        <div class="relative h-48 bg-rose-500 rounded-bl-4xl">
+          <svg class="absolute bottom-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#ffffff" fill-opacity="1" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,85.3C672,75,768,85,864,122.7C960,160,1056,224,1152,245.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+        </div>
+        <div class="px-10 pt-4 pb-8 bg-white rounded-tr-4xl">
+          <h1 class="text-2xl font-semibold text-gray-900">Welcome back!</h1>
+          <form class="mt-12" action="" method="POST">
+            <div class="relative">
+              <input id="email" name="email" type="text" class="peer h-10 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-rose-600" placeholder="john@doe.com" />
+              <label for="email" class="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email address</label>
+            </div>
+            <div class="mt-10 relative">
+              <input id="password" type="password" name="password" class="peer h-10 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-rose-600" placeholder="Password" />
+              <label for="password" class="absolute left-0 -top-12 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
+            </div>
+
+            <input type="sumbit" value="Sign in" class="mt-20 px-4 py-2 rounded bg-rose-500 hover:bg-rose-400 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-500 focus:ring-opacity-80 cursor-pointer" />
+          </form>
+          <a href="#" class="mt-4 block text-sm text-center font-medium text-rose-600 hover:underline focus:outline-none focus:ring-2 focus:ring-rose-500"> Forgot your password? </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="mt-6 space-y-2">
+          <h3 class="text-center text-lg font-semibold text-blue-900">Harga Paket :</h3>
+          <div class="grid grid-cols-2 gap-2 text-center text-sm sm:text-base font-medium text-blue-900">
+            <div>2 Jam Rp. 2.000</div>
+            <div>3 Jam Rp. 3.000</div>
+            <div>8 Jam Rp. 4.000</div>
+            <div>1 Hari Rp. 6.000</div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      // Switch between voucher and member forms
+      $('#voucherBtn').click(function() {
+        $('#voucherForm').show();
+        $('#memberForm').hide();
+        $(this).addClass('bg-blue-700').removeClass('bg-blue-500 hover:bg-blue-600');
+        $('#memberBtn').addClass('bg-blue-500 hover:bg-blue-600').removeClass('bg-blue-700');
+      });
+
+      $('#memberBtn').click(function() {
+        $('#memberForm').show();
+        $('#voucherForm').hide();
+        $(this).addClass('bg-blue-700').removeClass('bg-gray-500 hover:bg-blue-600');
+        $('#voucherBtn').addClass('bg-blue-500 hover:bg-blue-600').removeClass('bg-blue-700');
+      });
+
+      // Handle voucher form submission with loading spinner
+      $('#voucherForm').submit(function(e) {
+        e.preventDefault();
+        var $submitBtn = $('#voucherSubmitBtn');
+        $submitBtn.prop('disabled', true); // Disable the button
+        $submitBtn.addClass('hover:bg-gray-500')
+        $submitBtn.html('<div class="loading loading-spinner loading-sm">"></div> Loading'); // Add spinner and change text
+
+        // Simulate an AJAX request (you can replace this with actual AJAX request)
+        setTimeout(function() {
+          // Reset the button after the request is complete
+          $submitBtn.prop('disabled', false);
+          $submitBtn.html('Login');
+          alert('Voucher form submitted!');
+        }, 2000); // Simulate 2 seconds of loading time
+      });
+
+      // Handle member form submission with loading spinner
+      $('#memberForm').submit(function(e) {
+        e.preventDefault();
+        var $submitBtn = $('#memberSubmitBtn');
+        $submitBtn.prop('disabled', true); // Disable the button
+        $submitBtn.html('<div class="loading loading-spinner loading-sm">"></div> Loading'); // Add spinner and change text
+
+
+        // Simulate an AJAX request (you can replace this with actual AJAX request)
+        setTimeout(function() {
+          $('#loginCard').html(`
+            <div class="text-center">
+              <h2 class="text-3xl sm:text-4xl font-bold text-blue-700 mb-6">Success!</h2>
+              <p class="text-lg sm:text-xl font-semibold text-blue-600">Login successful, please wait...</p>
+            </div>
+          `);
+        }, 2000); // Simulate 2 seconds of loading time
+      });
+    });
+  </script>
+</body>
+</html>

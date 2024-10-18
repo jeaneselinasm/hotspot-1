@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISAK HOTSPOT</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <!-- <link rel="stylesheet" href="main.css"> -->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  input:focus + span,
+  input.not-empty + span {
+    transform: translateY(-30px) translateX(-10px) scale(0.90);
+    color: #1d4ed8; /* Change color to blue on focus */
+    /*background-color: #fca5a5;  Background changes on focus */
+  }
+</style>
+</head>
+<body class="min-h-screen bg-gray-100 flex flex-col">
+  <div class="flex-grow bg-no-repeat bg-cover bg-center py-8 px-4 sm:px-6 lg:px-8" style="background-image: url('../bg/2.png');">
+    <div class="max-w-md w-full mx-auto space-y-8">
+      <!-- <div id="loginCard" class="bg-white p-6 sm:p-8 rounded-3xl shadow-lg"></div> -->
+      <!-- <div class="absolute inset-0 bg-cover bg-center backdrop-blur-lg"></div> -->
+
+      <div class="bg-[#CDC6BB] p-6 sm:p-8 rounded-3xl shadow-lg opacity-85">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#534540] mb-6">
+          LOGO
+        </h2>
+        <p class="text-sm sm:text-base mb-6 text-justify text-[#614f47] font-bold">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore esse soluta, animi quos doloribus minima quidem voluptatum nesciunt inventore at expedita voluptate officia cumque, vel ea quis pariatur, illo veniam.
+        </p>
+        <p class="text-center text-sm sm:text-base mb-4">
+          Silahkan masukkan kode voucher yang anda miliki
+        </p>
+        <div class=" flex justify-center items-center">
+          slsls
+          <label for="" class="relative">
+            <input id="inputField" type="text" class="h-20 w-96 px-2 text-4xl bg-white border-2 rounded-lg border-red-500 border-opacity-50 outline-none focus:border-blue-500 focus:text-blue-900 transition duration-200">
+            <span id="inputLabel" class="text-4xl text-black text-opacity-80 absolute left-0 top-4 mx-6 px-2 transition duration-200 transform scale-100 origin-left bg-white pointer-events-none">Input</span>
+          </label>
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-center text-lg font-semibold text-blue-900">Harga Paket :</h3>
+          <div class="grid grid-cols-2 gap-2 text-center text-sm sm:text-base font-medium text-blue-900">
+            <div>2 Jam Rp. 2.000</div>
+            <div>3 Jam Rp. 3.000</div>
+            <div>8 Jam Rp. 4.000</div>
+            <div>1 Hari Rp. 6.000</div>
+          </div>
+        </div>  
+</div>
+
+       
+      </div>
+  </div>
+
+  <script>
+    const inputField = document.getElementById('inputField');
+    const inputLabel = document.getElementById('inputLabel');
+  
+    // Function to toggle label position based on input value
+    function toggleLabel() {
+      if (inputField.value !== '') {
+        inputField.classList.add('not-empty'); // Keep the label in the moved position
+      } else {
+        inputField.classList.remove('not-empty'); // Reset the label position
+      }
+    }
+  
+    // Listen to input and change events
+    inputField.addEventListener('input', toggleLabel);
+    inputField.addEventListener('change', toggleLabel);
+  
+    // Call toggleLabel initially to check if there's already a value
+    toggleLabel();
+  </script>
+</body>
+</html>
